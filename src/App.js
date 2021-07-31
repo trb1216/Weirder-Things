@@ -2,10 +2,7 @@
 import "./App.css";
 import { Switch, Route } from "react-router-dom"
 import logo from "./components/weirder-things.png";
-import Register from "./components/Register";
-import Login from "./components/Login";
-import {fetchAllPosts} from "./api/api.js";
-import {Navbar, Home, Profile, Posts} from "./components/Navbar.js/index.js"
+import { Navbar, Home, Profile, Posts, Register, Login } from "./components";
 
 function App() {
   return (
@@ -13,6 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-image" alt="weider-things-logo" />
       </header>
+      <div>
       <Navbar />
         <Switch>
           <Route path="/home" component ={Home} />
@@ -21,7 +19,7 @@ function App() {
         </Switch>
         <Register />
         <Login />
-        <fetchAllPosts />
+        </div>
     </div>
   );
 }
