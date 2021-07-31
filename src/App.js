@@ -5,7 +5,10 @@ import logo from "./components/weirder-things.png";
 import { LoginPage, Navbar, Home, Profile, Posts, Register, Login } from "./components";
 
 function App() {
+  // if loggedOUt then to Login
   return (
+
+  //login intro//
     <div className="App">
       <body>
         <img src={logo} className="App-image" alt="weider-things-logo" />
@@ -18,7 +21,7 @@ function App() {
           <Route path="/register" component ={Register} />
         </Switch>
       </div>
-
+{/* navigation, small logo, page style */}
       <div>
       <Navbar />
         <Switch>
