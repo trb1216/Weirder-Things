@@ -6,6 +6,7 @@ export const fetchAllPosts = async () => {
   const json = await result.json();
   return json;
 };
+
 export const userRegister = () => {
   fetch(`${URL}/register`, {
     method: "POST",
