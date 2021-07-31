@@ -1,22 +1,21 @@
 const URL = "https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-PT";
 
 export const fetchAllPosts = async () => {
-  const userPostsURL = `${URL}/`;
+  const userPostsURL = `${URL}/posts`;
   const result = await fetch(userPostsURL);
   const json = await result.json();
   return json;
 };
-export const userRegister = () => {
+
+export const userRegister = (username, password) => {
   fetch(`${URL}/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: "Bearer TOKEN_STRING_HERE",
     },
     body: JSON.stringify({
-      user: {
-        username: "",
-        password: "",
-      },
+      user: { username, password },
     }),
   })
     .then((response) => response.json())
@@ -25,7 +24,7 @@ export const userRegister = () => {
     })
     .catch(console.error);
 };
-export const userLogin = () => {
+export const userLogin = (username, password) => {
   fetch(`${URL}/login`, {
     method: "POST",
     headers: {
@@ -33,8 +32,8 @@ export const userLogin = () => {
     },
     body: JSON.stringify({
       user: {
-        username: "",
-        password: "",
+        username,
+        password,
       },
     }),
   })

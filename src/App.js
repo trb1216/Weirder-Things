@@ -2,8 +2,8 @@
 import logo from "./components/weirder-things.png";
 import "./App.css";
 import Register from "./components/Register";
-import Login from "./components/Login";
-import {fetchAllPosts} from "./api/api.js";
+import Login from "./components/Login.jsx";
+
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         </a>*/}
         <Register />
         <Login />
-        <fetchAllPosts />
+       
       </header>
     </div>
   );
