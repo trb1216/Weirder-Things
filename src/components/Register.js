@@ -1,10 +1,10 @@
 import React from "react";
-import "../api/api";
-import { userRegister } from "../api/api";
+// import "../api/PostAPI";
+import { userRegister } from "../api/RegisterAPI";
 
 const Register = () => {
   return (
-    <button type="button" onClick={Register}key={userRegister}>
+    <button type="button">
       register
     </button>
   );
