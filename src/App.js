@@ -4,7 +4,6 @@ import { Switch, Route } from "react-router-dom"
 import logo from "./components/weirder-things.png";
 import { LoginPage, Navbar, Home, Profile, Posts, Register, Login } from "./components";
 
-
 function App() {
   // if loggedOUt then to Login
   return (
@@ -30,7 +29,6 @@ function App() {
           <Route path="/profile" component ={Profile} />
           <Route path="/posts" component ={Posts} />
         </Switch>
-        
         </div>
       </div>
 
