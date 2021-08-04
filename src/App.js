@@ -1,30 +1,39 @@
 // import logo from './logo.svg';
-import logo from "./components/weirder-things.png";
 import "./App.css";
-import Register from "./components/Register";
-import Login from "./components/Login";
-import {fetchAllPosts} from "./api/api.js";
+import { Switch, Route } from "react-router-dom"
+import logo from "./components/weirder-things.png";
+import { LoginPage, Navbar, Home, Profile, Posts, Register, Login } from "./components";
+
 
 function App() {
+  // if loggedOUt then to Login
   return (
+
+  //login intro//
     <div className="App">
-      <header className="App-header">
+      <body>
         <img src={logo} className="App-image" alt="weider-things-logo" />
-        {/*<img src={logo} className="App-logo" alt="logo" /> */}
-        <p>{/* Edit <code>src/App.js</code> and save to reload. */}</p>
-        {/*<a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          /Learn React
-        </a>*/}
-        <Register />
-        <Login />
-        <fetchAllPosts />
-      </header>
-    </div>
+      </body>
+      
+      <div>
+      <LoginPage />
+       <Switch>
+          <Route path="/home" component ={Login} />
+          <Route path="/register" component ={Register} />
+        </Switch>
+      </div>
+{/* navigation, small logo, page style */}
+      <div>
+      <Navbar />
+        <Switch>
+          <Route path="/home" component ={Home} />
+          <Route path="/profile" component ={Profile} />
+          <Route path="/posts" component ={Posts} />
+        </Switch>
+        
+        </div>
+      </div>
+
   );
 }
 
