@@ -10,9 +10,9 @@ function App() {
 
   //login intro//
     <div className="App">
-      <body>
+      
         <img src={logo} className="App-image" alt="weider-things-logo" />
-      </body>
+      
       
       <div>
       <LoginPage />
