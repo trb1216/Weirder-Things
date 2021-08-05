@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ReactDOM } from "react";
+
 const POSTS_URL =
   "https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-PT/posts";
 
@@ -26,6 +26,7 @@ const Posts = () => {
 
   return (
     <div>
+      <h1>Posts</h1>
       <form
         onSubmit={(e) => {
           e.preventDefault();
