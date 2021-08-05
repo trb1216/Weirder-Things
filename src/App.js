@@ -10,10 +10,10 @@ function App() {
 
   //login intro//
     <div className="App">
-      <body>
-        <img src={logo} className="App-image" alt="weider-things-logo" />
-      </body>
-      
+       <header>
+        <img src={logo} style={{width: 300, padding: 100}} className="App-image" alt="weider-things-logo" />
+      </header>
+      <main>
       <div>
       <LoginPage />
        <Switch>
@@ -30,6 +30,7 @@ function App() {
           <Route path="/posts" component ={Posts} />
         </Switch>
         </div>
+        </main>
       </div>
 
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Login from "./Login";
-import Register from "./Register";
+import Login from "./Login.jsx";
+import Register from "./Register.jsx";
 
 const LoginPage = () => {
     return (<div>
