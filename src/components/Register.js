@@ -1,6 +1,6 @@
 import React from "react";
-
-// import { userRegister } from "../api/RegisterAPI";
+// import "../api/PostAPI";
+import { userRegister } from "../api/RegisterAPI";
 
 const Register = () => {
   return (
