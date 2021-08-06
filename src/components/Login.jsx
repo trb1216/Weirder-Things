@@ -35,10 +35,6 @@ useEffect(() => {
   stopOutOfControlMessages();
 },[]);
 
-  const passwordInput = (e) => {
-    console.log(e.target.value);
-  };
-
   const onFormSubmit = (event) => {
     event.preventDefault();
     console.log("Testing Form Submission")
@@ -63,7 +59,7 @@ useEffect(() => {
         onChange={setPassword}
       ></input>
       <button
-        type="button"
+        type="submit"
         onClick={console.log("need submission button here")}
         key={userLogin}
       >
