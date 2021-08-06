@@ -1,7 +1,7 @@
 
 import React, {useState, useEffect} from "react";
 
-const Register = ({authorized}) => {
+const Register = () => {
   const [body, setBody] = useState([]);
   const REG_URL =
   "https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-PT/users/register";
@@ -32,7 +32,7 @@ useEffect(() => {
 
   return (<div>
     <button type="button">
-      register
+      REGISTER
     </button>
    <form onSubmit={(e) => {
           e.preventDefault();

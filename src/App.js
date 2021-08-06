@@ -7,7 +7,7 @@ import { LoginPage, Navbar, Home, Profile, Posts, Register, Login } from "./comp
 function App() {
   // if loggedOUt then to Login
   return (
-
+ 
   //login intro//
     <div className="App">
        <header>
@@ -17,11 +17,12 @@ function App() {
       <div>
       <LoginPage />
        <Switch>
-          <Route path="/home" component ={Login} />
+          <Route path="/" component ={Login} />
           <Route path="/register" component ={Register} />
         </Switch>
       </div>
 {/* navigation, small logo, page style */}
+if ()
       <div>
       <Navbar />
         <Switch>

@@ -1,6 +1,11 @@
+
 body {
   background-color: #030706;
   color: white;
+}
+h1, h2, h3 {
+  font-family: Moby;
+
 }
 
 .App {
@@ -10,6 +15,13 @@ body {
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.inputCointainer {
+  height: 30px;
+  width: 100px;
+  display: block;
+  background-color: aqua;
 }
 
 @media (prefers-reduced-motion: no-preference) {

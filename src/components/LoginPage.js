@@ -5,11 +5,9 @@ import Register from "./Register.jsx";
 
 const LoginPage = () => {
     return (<div>
-        <Link to="/home">
-        <Login />
+        <Link to="/"><button>Login</button>
         </Link>
-        <Link to="/register">
-        <Register />
+        <Link to="/register"><button>Register</button>
         </Link>
         </div>);
 }

@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
+import "./Page.css";
 
 // Placeholder function to work with onChnage in buttons//
 
 const Login = () => {
-  const [body, setBody] = useState([]);
+  const [ body, setBody ] = useState([]);
+  const [ username, setUsername ] = useState([]);
+  const [ password, setPassword ] = useState([]);
+
   const LOGIN_URL =
     "https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-PT/users/login";
+ 
   const userLogin = {
     method: "POST",
     headers: {
@@ -29,33 +34,41 @@ const Login = () => {
 useEffect(() => {
   stopOutOfControlMessages();
 },[]);
+
   const passwordInput = (e) => {
     console.log(e.target.value);
   };
 
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    console.log("Testing Form Submission")
+    };
+
   //Login field, which will have to revisited with forms//
 
   return (
-    <div>
+    <div className="inputContainer">
+      <form onSubmit={onFormSubmit}>
+      <label>User ID:</label>
       <input
         type="text"
-        value=""
-        placeholder="Your Login ID"
-        name="loginInput"
+        value={username}
+        placeholder="Your Here"
+        onChange={setUsername}
       ></input>
       <input
         type="password"
-        value={body}
+        value={password}
         placeholder="Your Password"
-        onChange={passwordInput}
+        onChange={setPassword}
       ></input>
       <button
         type="button"
         onClick={console.log("need submission button here")}
         key={userLogin}
       >
-        Login
       </button>
+      </form>
     </div>
   );
 };
