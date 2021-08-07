@@ -1,11 +1,12 @@
-
 body {
   background-color: #030706;
   color: white;
+  font-family: input-sans, sans-serif;
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: Moby;
-
 }
 
 .App {
@@ -17,11 +18,41 @@ h1, h2, h3 {
   pointer-events: none;
 }
 
-.inputCointainer {
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+}
+
+.inputContainer button {
+  background-color: #030706;
+  font-family: moby;
+  font-weight: bold;
+  color: hsl(0, 100%, 40%);
+  border: white solid 2px;
   height: 30px;
-  width: 100px;
-  display: block;
-  background-color: aqua;
+  width: 208px;
+  padding: none;
+}
+
+.inputField {
+  height: 50px;
+  width: 200px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  color: #030706;
+  font-family: moby;
+  font-weight: bold;
+}
+
+.navbar button {
 }
 
 @media (prefers-reduced-motion: no-preference) {
