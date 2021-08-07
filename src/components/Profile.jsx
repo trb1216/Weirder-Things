@@ -1,38 +1,20 @@
 import React, { useEffect, useState } from "react";
-
-
-const  base_url = 'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-PT'
-
-
+import { userInfo } from "../api/index";
 const Profile = () => {
   const [body, setBody] = useState([]);
-  const ME_URL =
-    "https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-PT/users/me";
 
-  const userInfo = {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer TOKEN_STRING_HERE",
-    },
-  };
-  
-  fetch(ME_URL, userInfo);
-  const controlMessages = async () => {
-    const res = await fetch(ME_URL, userInfo);
-    const json = await res.json();
-    console.log(json);
-    setBody(json);
-  };
   useEffect(() => {
-    controlMessages();
+    userInfo();
   }, []);
 
   return (
-    <div>
-        <form onSubmit={(e) => {
-          e.preventDefault();
-          setBody(body);
-        }}></form>
+    <div
+      value={body}
+      onChange={(e) => {
+        e.preventDefault();
+        setBody(body);
+      }}
+    >
       <h1>Profile</h1>
     </div>
   );

@@ -1,4 +1,4 @@
-export { default as Home } from "./Home";
+export { default as Home } from "./Home.jsx";
 export { default as Profile } from "./Profile.jsx";
 export { default as Navbar } from "./Navbar";
 export { default as Posts } from "./Posts.jsx";

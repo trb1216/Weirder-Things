@@ -33,6 +33,7 @@ function App() {
       </header>
       <main>
         <div>
+          
           <LoginPage />
           <Switch>
             <Route path="/register" component={Register} />
