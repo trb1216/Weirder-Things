@@ -3,12 +3,11 @@ import { createUser } from "../api/index";
 
 const Register = () => {
   const [body, setBody] = useState([]);
-  const [username, setUsername] = useState([]);
-  const [password, setPassword] = useState([]);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const onFormSubmit = async (event) => {
     event.preventDefault();
-    console.log("Testing Form Submission");
     let json = await createUser(username, password);
     setBody(json.data);
     console.log(body);
@@ -34,12 +33,7 @@ const Register = () => {
           placeholder="Set Your Password"
           onChange={updatePassword}
         ></input>
-        <button
-          type="submit"
-          onClick={console.log("need submission button here")}
-        >
-          REGISTER
-        </button>
+        <button type="submit">REGISTER</button>
       </form>
     </div>
   );

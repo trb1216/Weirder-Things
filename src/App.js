@@ -13,8 +13,9 @@ import {
 } from "./components";
 
 function App() {
-  if (localStorage.getItem("user")) {
-    return (
+  // if () {
+  return (
+    <div className="App">
       <div>
         <Navbar />
         <Switch>
@@ -23,28 +24,28 @@ function App() {
           <Route path="/posts" component={Posts} />
         </Switch>
       </div>
-    );
-  }
+      {/* //   );
+  // }
 
-  return (
-    //login intro//
-    <div className="App">
-      <header>
-        <img
-          src={logo}
-          style={{ width: 300, padding: 100 }}
-          className="App-image"
-          alt="weider-things-logo"
-        />
-      </header>
+  // return (
+    //login intro// */}
       <div>
-        <LoginPage />
-        <Switch>
-          <Route path="/register" component={Register} />
-          <Route path="/" component={Login} />
-        </Switch>
+        <header>
+          <img
+            src={logo}
+            style={{ width: 300, padding: 100 }}
+            className="App-image"
+            alt="weider-things-logo"
+          />
+        </header>
+        <div>
+          <LoginPage />
+          <Switch>
+            <Route path="/register" component={Register} />
+            <Route path="/" component={Login} />
+          </Switch>
+        </div>
       </div>
-      {/* navigation, small logo, page style */}
     </div>
   );
 }

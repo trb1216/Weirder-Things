@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../App.css";
 import { userLogin } from "../api/index";
-import { useHistory, } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 // Placeholder function to work with onChnage in buttons//
 
 const Login = () => {
-  const [username, setUsername] = useState([]);
-  const [password, setPassword] = useState([]);
+  const [body, setBody] = useState({});
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  let history = useHistory();
 
-  useEffect(() => {
-    userLogin();
-  }, []);
-
-  const onFormSubmit = (event) => {
+  const onFormSubmit = async (event) => {
     event.preventDefault();
-    console.log("Testing Form Submission");
+    let json = await userLogin(username, password);
+    setBody(json.data);
+    localStorage.setItem("user", body);
+    history.push("../Home");
+    console.log(body);
   };
 
-  //Login field, which will have to revisited with forms//
   const updateUsername = (event) => setUsername(event.target.value);
   const updatePassword = (event) => setPassword(event.target.value);
-  let history = useHistory()
-  return (
 
+  return (
     <div>
       <form className="inputContainer">
         <label>User ID:</label>
@@ -40,11 +40,7 @@ const Login = () => {
           placeholder="Your Password"
           onChange={updatePassword}
         ></input>
-        <button onSubmit={onFormSubmit}
-          type="submit"
-          onClick={() => { history.push('../Home') }}
-          key={userLogin}
-        >
+        <button onSubmit={onFormSubmit} type="submit" key={userLogin}>
           SUBMIT
         </button>
       </form>
