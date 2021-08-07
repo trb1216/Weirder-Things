@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Page.css";
+import "../App.css";
 import { userLogin } from "../api/index";
 import { useHistory, } from 'react-router-dom'
 // Placeholder function to work with onChnage in buttons//
@@ -22,16 +22,19 @@ const Login = () => {
   const updatePassword = (event) => setPassword(event.target.value);
   let history = useHistory()
   return (
-    <div className="inputContainer">
-      <form>
+
+    <div>
+      <form className="inputContainer">
         <label>User ID:</label>
         <input
+          className="inputField"
           type="text"
           value={username}
           placeholder="Your ID Here"
           onChange={updateUsername}
         ></input>
         <input
+          className="inputField"
           type="password"
           value={password}
           placeholder="Your Password"

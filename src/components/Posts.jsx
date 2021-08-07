@@ -1,27 +1,11 @@
 import React, { useEffect, useState } from "react";
-
-const POSTS_URL =
-  "https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-PT/posts";
+import { userPost } from "../api/index";
 
 const Posts = () => {
   const [body, setBody] = useState([]);
-  const userPost = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": "Bearer TOKEN_STRING_HERE",
-    },
-    body: JSON.stringify({
-      /* whatever things you need to send to the API */
-    }),
-  };
+
   useEffect(() => {
-    fetch(POSTS_URL, userPost)
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json);
-        setBody(json);
-      });
+    userPost();
   }, []);
 
   return (
