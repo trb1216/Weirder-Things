@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import { userLogin } from "../api/index";
+import { useHistory, } from 'react-router-dom'
 // Placeholder function to work with onChnage in buttons//
 
 const Login = () => {
-  // what are we using this for? : const [body, setBody] = useState([]);
   const [username, setUsername] = useState([]);
   const [password, setPassword] = useState([]);
 
@@ -20,10 +20,11 @@ const Login = () => {
   //Login field, which will have to revisited with forms//
   const updateUsername = (event) => setUsername(event.target.value);
   const updatePassword = (event) => setPassword(event.target.value);
-
+  let history = useHistory()
   return (
+
     <div>
-      <form onSubmit={onFormSubmit} className="inputContainer">
+      <form className="inputContainer">
         <label>User ID:</label>
         <input
           className="inputField"
@@ -39,9 +40,9 @@ const Login = () => {
           placeholder="Your Password"
           onChange={updatePassword}
         ></input>
-        <button
+        <button onSubmit={onFormSubmit}
           type="submit"
-          onClick={console.log("need submission button here")}
+          onClick={() => { history.push('../Home') }}
           key={userLogin}
         >
           SUBMIT
