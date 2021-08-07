@@ -34,7 +34,7 @@ export const userInfo = async () => {
   const fetchArgsUser = {
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer TOKEN_STRING_HERE",
+      "Authorization": "Bearer TOKEN_STRING_HERE",
     },
   };
   const res = await fetch(URL + "/users/me", fetchArgsUser);
@@ -76,7 +76,7 @@ export const userPost = async () => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer TOKEN_STRING_HERE",
+      "Authorization": "Bearer TOKEN_STRING_HERE",
     },
     body: JSON.stringify(),
   };

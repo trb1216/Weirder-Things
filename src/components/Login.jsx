@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Page.css";
 import { userLogin } from "../api/index";
-import { useHistory, } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 // Placeholder function to work with onChnage in buttons//
 
 const Login = () => {
@@ -20,7 +20,7 @@ const Login = () => {
   //Login field, which will have to revisited with forms//
   const updateUsername = (event) => setUsername(event.target.value);
   const updatePassword = (event) => setPassword(event.target.value);
-  let history = useHistory()
+  let history = useHistory();
   return (
     <div className="inputContainer">
       <form>
@@ -37,9 +37,12 @@ const Login = () => {
           placeholder="Your Password"
           onChange={updatePassword}
         ></input>
-        <button onSubmit={onFormSubmit}
+        <button
+          onSubmit={onFormSubmit}
           type="submit"
-          onClick={() => { history.push('../Home') }}
+          onClick={() => {
+            history.push("../Home");
+          }}
           key={userLogin}
         >
           SUBMIT
