@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+<<<<<<< HEAD
 import "../App.css";
 
 // Placeholder function to work with onChnage in buttons//
@@ -33,6 +34,19 @@ const Login = () => {
   };
   useEffect(() => {
     stopOutOfControlMessages();
+=======
+import "./Page.css";
+import { userLogin } from "../api/index";
+// Placeholder function to work with onChnage in buttons//
+
+const Login = () => {
+  // what are we using this for? : const [body, setBody] = useState([]);
+  const [username, setUsername] = useState([]);
+  const [password, setPassword] = useState([]);
+
+  useEffect(() => {
+    userLogin();
+>>>>>>> a09bda56b3c6089f0bfd7f58bfe491178757e00e
   }, []);
 
   const onFormSubmit = (event) => {
@@ -45,18 +59,28 @@ const Login = () => {
   const updatePassword = (event) => setPassword(event.target.value);
 
   return (
+<<<<<<< HEAD
     <div>
       <form onSubmit={onFormSubmit} className="inputContainer">
         <label>User ID:</label>
         <input
           className="inputField"
+=======
+    <div className="inputContainer">
+      <form onSubmit={onFormSubmit}>
+        <label>User ID:</label>
+        <input
+>>>>>>> a09bda56b3c6089f0bfd7f58bfe491178757e00e
           type="text"
           value={username}
           placeholder="Your ID Here"
           onChange={updateUsername}
         ></input>
         <input
+<<<<<<< HEAD
           className="inputField"
+=======
+>>>>>>> a09bda56b3c6089f0bfd7f58bfe491178757e00e
           type="password"
           value={password}
           placeholder="Your Password"

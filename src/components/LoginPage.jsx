@@ -1,13 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-<<<<<<< Updated upstream
-import Register from "./Register";
-=======
-import Login from "./Login.jsx";
 import Register from "./Register.jsx";
->>>>>>> Stashed changes
 
 const LoginPage = () => {
+  console.log(Register, "This is what Register is doing on LoginPage.");
   return (
     <div>
       <Link to="/"></Link>

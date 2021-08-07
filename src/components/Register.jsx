@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { createUser } from "../api/index";
 
 const Register = () => {
@@ -11,6 +11,7 @@ const Register = () => {
     console.log("Testing Form Submission");
     let json = await createUser(username, password);
     setBody(json.data);
+    console.log(body);
   };
 
   //Login field, which will have to revisited with forms//
@@ -45,17 +46,3 @@ const Register = () => {
 };
 
 export default Register;
-
-// //const stopOutOfControlMessages = async () => {
-//   const res = await fetch(LOGIN_URL, userLogin);
-//   const json = await res.json();
-
-//   console.log(json);
-//   setBody(json);
-// };
-// useEffect(() => {
-// haltMessages();
-// },[]);
-// const passwordInput = (e) => {
-//   console.log(e.target.value);
-// }; //
