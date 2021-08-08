@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LoginPage from "./LoginPage";
 
 const Navbar = () => {
   const logOut = () => {
     localStorage.removeItem("userToken");
+    window.location.href = LoginPage;
   };
 
   return (

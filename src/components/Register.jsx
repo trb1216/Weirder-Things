@@ -18,8 +18,8 @@ const Register = () => {
   const updatePassword = (event) => setPassword(event.target.value);
 
   return (
-    <div className="inputContainer">
-      <form onSubmit={onFormSubmit}>
+    <div>
+      <form onSubmit={onFormSubmit} className="inputContainer">
         <label>REGISTER:</label>
         <input
           type="text"

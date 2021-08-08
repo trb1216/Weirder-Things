@@ -16,13 +16,13 @@ function App() {
   if (localStorage.getItem("userToken")) {
     return (
       <div className="App">
-        <p>{localStorage.getItem("userToken")}</p>
         <div>
           <Navbar />
           <Switch>
             <Route path="/home" component={Home} />
             <Route path="/profile" component={Profile} />
             <Route path="/posts" component={Posts} />
+            <Route exact path="/" />
           </Switch>
         </div>
       </div>
@@ -43,7 +43,7 @@ function App() {
         <LoginPage />
         <Switch>
           <Route path="/register" component={Register} />
-          <Route path="/" component={Login} />
+          <Route exact path="/" component={Login} />
         </Switch>
       </div>
     </div>

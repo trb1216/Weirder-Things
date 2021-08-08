@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import "../App.css";
 import { userLogin } from "../api/index";
+import Home from "./Home";
 // Placeholder function to work with onChnage in buttons//
 
 const Login = () => {
   const [body, setBody] = useState({});
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   const onFormSubmit = async (event) => {
     event.preventDefault();
     let json = await userLogin(username, password);
     setBody(json.data);
     console.log(json);
     localStorage.setItem("userToken", json.data.token);
+    window.location.href = Home;
     console.log(body);
   };
 
