@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const logOut = () => {
-    localStorage.removeItem("user");
+    localStorage.removeItem("userToken");
   };
 
   return (

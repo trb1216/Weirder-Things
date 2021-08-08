@@ -13,38 +13,38 @@ import {
 } from "./components";
 
 function App() {
-  // if () {
-  return (
-    <div className="App">
-      <div>
-        <Navbar />
-        <Switch>
-          <Route path="/home" component={Home} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/posts" component={Posts} />
-        </Switch>
-      </div>
-      {/* //   );
-  // }
-
-  // return (
-    //login intro// */}
-      <div>
-        <header>
-          <img
-            src={logo}
-            style={{ width: 300, padding: 100 }}
-            className="App-image"
-            alt="weider-things-logo"
-          />
-        </header>
+  if (localStorage.getItem("userToken")) {
+    return (
+      <div className="App">
+        <p>{localStorage.getItem("userToken")}</p>
         <div>
-          <LoginPage />
+          <Navbar />
           <Switch>
-            <Route path="/register" component={Register} />
-            <Route path="/" component={Login} />
+            <Route path="/home" component={Home} />
+            <Route path="/profile" component={Profile} />
+            <Route path="/posts" component={Posts} />
           </Switch>
         </div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <header>
+        <img
+          src={logo}
+          style={{ width: 300, padding: 100 }}
+          className="App-image"
+          alt="weider-things-logo"
+        />
+      </header>
+      <div>
+        <LoginPage />
+        <Switch>
+          <Route path="/register" component={Register} />
+          <Route path="/" component={Login} />
+        </Switch>
       </div>
     </div>
   );
