@@ -22,7 +22,8 @@ export const createUser = async (username, password) => {
   };
   const res = await fetch(URL + "/users/register", fetchArgs);
   const json = await res.json();
-  console.log(json.data.token);
+  console.log(json);
+  // json.data.token
   return json; // this leads to the return statement to be used with react //
 };
 // ==========   PROFILE  ==========  //
@@ -33,7 +34,7 @@ export const userInfo = async () => {
   const fetchArgsUser = {
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer TOKEN_STRING_HERE",
+      Authorization: "Bearer TOKEN_STRING_HERE",
     },
   };
   const res = await fetch(URL + "/users/me", fetchArgsUser);
@@ -75,7 +76,7 @@ export const userPost = async () => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer TOKEN_STRING_HERE",
+      Authorization: "Bearer TOKEN_STRING_HERE",
     },
     body: JSON.stringify(),
   };

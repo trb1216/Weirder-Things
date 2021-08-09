@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import logo from "./components/weirder-things.png";
@@ -39,6 +38,7 @@ function App() {
           alt="weider-things-logo"
         />
       </header>
+
       <div>
         <LoginPage />
         <Switch>
