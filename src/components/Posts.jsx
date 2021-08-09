@@ -31,9 +31,9 @@ const Posts = () => {
   const updateWillDeliver = (event) => setWillDeliver(event.target.value);
 
   return (
-    <div className="inputContainer">
+    <div>
       <h1>Post an item for sale</h1>
-      <form onSubmit={onPostClick} value={body}>
+      <form onSubmit={onPostClick} className="inputContainer">
         <input
           onChange={updateTitle}
           type="text"
@@ -57,13 +57,12 @@ const Posts = () => {
           placeholder="Item Description: (with condition)"
         ></textarea>
 
-        <input
-          onChange={updateWillDeliver}
-          type="text"
-          value={willDeliver}
-          placeholder="Will Deliver?"
-        ></input>
-
+        <select name="Deliver" value={willDeliver} onChange={updateWillDeliver}>
+          <option value="true">
+            Yes, I will carry it to you on silver platter!
+          </option>
+          <option value="false">Hell No, (but maybe for a fee $) </option>
+        </select>
         <button type="submit" key={userPost}>
           SUBMIT
         </button>
