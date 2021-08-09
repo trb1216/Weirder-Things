@@ -1,25 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { userPost } from "../api/index";
+import { useHistory } from "react-router";
+
+const userToken = localStorage.getItem("userToken");
 
 const Posts = () => {
-  const [body, setBody] = useState([]);
+  const [body, setBody] = useState({});
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [willDeliver, setWillDeliver] = useState("");
-  useEffect(() => {
-    userPost();
-  }, []);
+  const [willDeliver, setWillDeliver] = useState(false);
 
+  let history = useHistory();
   const onPostClick = async (event) => {
     event.preventDefault();
-    let json = await userPost(title, description, price, willDeliver);
+    let json = await userPost(
+      userToken,
+      title,
+      description,
+      price,
+      willDeliver
+    );
     setBody(json.data);
-    console.log(json);
-
     console.log(body);
-
-
+    history.push("/home");
   };
   const updateTitle = (event) => setTitle(event.target.value);
   const updateDescription = (event) => setDescription(event.target.value);
