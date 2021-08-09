@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import logo from "./components/weirder-things.png";
@@ -13,22 +12,24 @@ import {
 } from "./components";
 
 function App() {
-  if (localStorage.getItem("user")) {
+  if (localStorage.getItem("userToken")) {
     return (
-      <div>
-        <Navbar />
-        <Switch>
-          <Route path="/home" component={Home} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/posts" component={Posts} />
-        </Switch>
+      <div className="App">
+        <div>
+          <Navbar />
+          <Switch>
+            <Route path="/home" component={Home} />
+            <Route path="/profile" component={Profile} />
+            <Route path="/posts" component={Posts} />
+            <Route exact path="/" />
+          </Switch>
+        </div>
       </div>
     );
   }
 
   return (
-    //login intro//
-    <div className="App">
+    <div>
       <header>
         <img
           src={logo}
@@ -42,10 +43,9 @@ function App() {
         <LoginPage />
         <Switch>
           <Route path="/register" component={Register} />
-          <Route path="/" component={Login} />
+          <Route exact path="/" component={Login} />
         </Switch>
       </div>
-
     </div>
   );
 }
