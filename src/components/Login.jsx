@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import "../App.css";
 import { userLogin } from "../api/index";
 
@@ -6,6 +7,7 @@ const Login = () => {
   const [body, setBody] = useState({});
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  let history = useHistory();
   const onFormSubmit = async (event) => {
     event.preventDefault();
     let json = await userLogin(username, password);
@@ -13,6 +15,8 @@ const Login = () => {
     console.log(json);
     localStorage.setItem("userToken", json.data.token);
     console.log(body);
+    history.push("/home");
+    window.location.href = "/home";
   };
 
   const updateUsername = (event) => setUsername(event.target.value);

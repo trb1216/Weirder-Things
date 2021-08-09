@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const logOut = () => {
     localStorage.removeItem("userToken");
+    window.location.href = "/";
   };
 
   return (
