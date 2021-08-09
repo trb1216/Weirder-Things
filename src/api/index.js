@@ -34,7 +34,7 @@ export const userInfo = async () => {
   const fetchArgsUser = {
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer TOKEN_STRING_HERE",
+      Authorization: `Bearer ${localStorage.getItem("userToken")}`,
     },
   };
   const res = await fetch(URL + "/users/me", fetchArgsUser);

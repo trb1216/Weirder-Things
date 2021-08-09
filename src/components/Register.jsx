@@ -20,7 +20,7 @@ const Register = () => {
   return (
     <div>
       <form onSubmit={onFormSubmit} className="inputContainer">
-        <label>REGISTER:</label>
+        <label>Register:</label>
         <input
           id="username"
           type="text"

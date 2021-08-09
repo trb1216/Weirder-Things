@@ -1,6 +1,8 @@
 import React from "react";
 
 const Home = () => {
+  ///need to use API here that returns
+
   return (
     <div>
       <h1>Welcome Home</h1>
@@ -8,6 +10,7 @@ const Home = () => {
       <p></p>
       {/* need to map over messages */}
       <h3>Sent</h3>
+
       <p></p>
       {/* need to map over messages */}
     </div>

@@ -9,6 +9,17 @@ h3 {
   font-family: Moby;
 }
 
+a,
+a:visited,
+a:link {
+  text-decoration: none;
+  color: #cc0000;
+}
+
+a:active {
+  color: yellowgreen;
+}
+
 .App {
   text-align: center;
 }
@@ -31,15 +42,26 @@ h3 {
   background-color: #030706;
   font-family: moby;
   font-weight: bold;
-  color: hsl(0, 100%, 40%);
+  color: #cc0000;
   border: white solid 2px;
   height: 30px;
-  width: 208px;
-  padding: none;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.inputContainer input {
+  background-color: hsl(0, 0%, 65%);
+  font-family: moby;
+  font-weight: normal;
+  border: white solid 2px;
+  height: 40px;
+  padding: 5px;
+  margin-top: 5px;
+  color: #030706;
 }
 
 .inputField {
-  height: 50px;
+  height: 100px;
   width: 200px;
 }
 
@@ -47,12 +69,32 @@ h3 {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
-  color: #030706;
   font-family: moby;
   font-weight: bold;
 }
 
 .navbar button {
+  background-color: transparent;
+  font-family: moby;
+  color: #cc0000;
+  font-weight: bold;
+  height: 45px;
+  border: 3px solid #cc0000;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  color: #cc0000;
+  margin: 5px;
+  margin-bottom: 20px;
+}
+
+.navbar button:hover {
+  box-shadow: 0 0 10px 0 #cc0000 inset, 0 0 20px 2px #cc0000;
+  border: 3px solid #cc0000;
+  color: yellowgreen;
+}
+
+.loginLinks {
+  padding: 30px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

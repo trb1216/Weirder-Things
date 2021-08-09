@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="App">
       <header>
         <img
           src={logo}
@@ -30,15 +30,11 @@ function App() {
         />
       </header>
 
+      <div className="loginLinks">
+        <Link to="/">Login</Link>
+        <Link to="/register"> / Register</Link>
+      </div>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Login</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-        </ul>
         <Switch>
           <Route exact path="/">
             <Login />
