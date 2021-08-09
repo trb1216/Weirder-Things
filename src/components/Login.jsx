@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
 import { userLogin } from "../api/index";
-import Home from "./Home";
-// Placeholder function to work with onChnage in buttons//
 
 const Login = () => {
   const [body, setBody] = useState({});
@@ -14,13 +12,11 @@ const Login = () => {
     setBody(json.data);
     console.log(json);
     localStorage.setItem("userToken", json.data.token);
-    window.location.href = Home;
     console.log(body);
   };
 
   const updateUsername = (event) => setUsername(event.target.value);
   const updatePassword = (event) => setPassword(event.target.value);
-<
 
   return (
     <div>

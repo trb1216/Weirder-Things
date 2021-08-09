@@ -1,15 +1,7 @@
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import logo from "./components/weirder-things.png";
-import {
-  LoginPage,
-  Navbar,
-  Home,
-  Profile,
-  Posts,
-  Register,
-  Login,
-} from "./components";
+import { Navbar, Home, Profile, Posts, Register, Login } from "./components";
 
 function App() {
   if (localStorage.getItem("userToken")) {
@@ -21,7 +13,6 @@ function App() {
             <Route path="/home" component={Home} />
             <Route path="/profile" component={Profile} />
             <Route path="/posts" component={Posts} />
-            <Route exact path="/" />
           </Switch>
         </div>
       </div>
@@ -40,10 +31,21 @@ function App() {
       </header>
 
       <div>
-        <LoginPage />
+        <ul>
+          <li>
+            <Link to="/">Login</Link>
+          </li>
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
+        </ul>
         <Switch>
-          <Route path="/register" component={Register} />
-          <Route exact path="/" component={Login} />
+          <Route exact path="/">
+            <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
         </Switch>
       </div>
     </div>
