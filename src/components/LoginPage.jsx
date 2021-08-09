@@ -4,6 +4,7 @@ import Register from "./Register.jsx";
 
 const LoginPage = () => {
   console.log(Register, "This is what Register is doing on LoginPage.");
+
   return (
     <div>
       <Link to="/"></Link>

@@ -16,6 +16,7 @@ const Posts = () => {
   return (
     <div>
       <h1>Posts</h1>
+
       <form
         onSubmit={(e) => {
           e.preventDefault();
