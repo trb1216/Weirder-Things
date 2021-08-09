@@ -23,12 +23,14 @@ const Register = () => {
       <form onSubmit={onFormSubmit}>
         <label>REGISTER:</label>
         <input
+          id="username"
           type="text"
           value={username}
           placeholder="Choose your ID"
           onChange={updateUsername}
         ></input>
         <input
+          id="password"
           type="password"
           value={password}
           placeholder="Set Your Password"

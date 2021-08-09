@@ -37,6 +37,7 @@ function App() {
           alt="weider-things-logo"
         />
       </header>
+
       <div>
         <LoginPage />
         <Switch>
@@ -44,7 +45,7 @@ function App() {
           <Route path="/" component={Login} />
         </Switch>
       </div>
-      {/* navigation, small logo, page style */}
+
     </div>
   );
 }
