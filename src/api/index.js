@@ -30,11 +30,11 @@ export const createUser = async (username, password) => {
 
 //This ends up at Profile.jsx for the User's info to see/change //
 
-export const userInfo = async () => {
+export const userInfo = async (userToken) => {
   const fetchArgsUser = {
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+      Authorization: `Bearer ${userToken}`,
     },
   };
   const res = await fetch(URL + "/users/me", fetchArgsUser);
@@ -71,17 +71,31 @@ export const userLogin = async (username, password) => {
 
 //  This ends up at Posts.jsx to post   //
 
-export const userPost = async () => {
+export const userPost = async (
+  userToken,
+  title,
+  description,
+  price,
+  willDeliver
+) => {
+  const body = {
+    post: {
+      title,
+      description,
+      price,
+      willDeliver,
+    },
+  };
+
   const fetchArgsUser = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+      Authorization: `Bearer ${userToken}`,
     },
-    body: JSON.stringify(),
+    body: JSON.stringify(body),
   };
   const res = await fetch(URL + "/posts", fetchArgsUser);
   const json = await res.json();
-  console.log(json);
   return json; // this leads to the return statement to be used with react //
 };
