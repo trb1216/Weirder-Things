@@ -127,24 +127,78 @@ export const userList = async (
   const res = await fetch(URL + "/posts/POST_ID", fetchArgsUserPatch);
   const json = await res.json();
   return json; // this leads to the return statement to be used with react //
-
 };
 
 //============ DELETE ==================//
 
-//  does not delete: sets isActive to false// 
+//  does not delete: sets isActive to false//
 
 export const deletePost = async (userToken) => {
   const fetchArgsDelete = {
     method: "DELETE",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: `Bearer ${userToken}`,
-    }
-
-  }
-  const res = await fetch(URL + "/posts/5e8d1bd48829fb0017d2233b", fetchArgsDelete);
+    },
+  };
+  const res = await fetch(
+    URL + "/posts/5e8d1bd48829fb0017d2233b",
+    fetchArgsDelete
+  );
   const json = await res.json();
   console.log(json);
-  return null
+  return null;
+};
+
+// ========= TEST ROUTES==========  //
+
+export const userInfoTestMe = async (userToken) => {
+  const fetchArgsUser = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${userToken}`,
+    },
+  };
+  const res = await fetch(URL + "/test/me", fetchArgsUser);
+  const json = await res.json();
+  console.log(json);
+  return json; // this leads to the return statement to be used with react //
+};
+
+export const userInfoTestData = async (userToken) => {
+  const fetchArgsData = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${userToken}`,
+    },
+  };
+  const res = await fetch(URL + "/test/data", fetchArgsData);
+  const json = await res.json();
+  console.log(json);
+  return json; // this leads to the return statement to be used with react //
+};
+
+//=========== MESSAGES ===============//
+
+export const userMessages = async (message, content, userToken) => {
+  const body = {
+    user: {
+      message,
+      content,
+    },
+  };
+  const fetchArgs = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${userToken}`,
+    },
+    body: JSON.stringify(body),
+  };
+  const res = await fetch(
+    URL + "/posts/5e8929ddd439160017553e06/messages",
+    fetchArgs
+  );
+  const json = await res.json();
+  console.log(json);
 };
