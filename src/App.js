@@ -7,14 +7,12 @@ function App() {
   if (localStorage.getItem("userToken")) {
     return (
       <div className="App">
-        <div>
-          <Navbar />
-          <Switch>
-            <Route path="/home" component={Home} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/posts" component={Posts} />
-          </Switch>
-        </div>
+        <Navbar />
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/posts" component={Posts} />
+        </Switch>
       </div>
     );
   }

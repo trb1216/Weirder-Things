@@ -23,6 +23,8 @@ const Posts = () => {
     );
     setBody(json.data);
     console.log(body);
+    console.log(json.data);
+    window.alert("You've successfully posted another weird thing");
     history.push("/home");
   };
   const updateTitle = (event) => setTitle(event.target.value);

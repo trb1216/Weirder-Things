@@ -8,6 +8,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   let history = useHistory();
+
   const onFormSubmit = async (event) => {
     event.preventDefault();
     let json = await userLogin(username, password);
@@ -15,6 +16,7 @@ const Login = () => {
     console.log(json);
     localStorage.setItem("userToken", json.data.token);
     console.log(body);
+    window.alert(json.data.message);
     history.push("/home");
     window.location.href = "/home";
   };
