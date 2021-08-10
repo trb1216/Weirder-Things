@@ -26,6 +26,7 @@ export const createUser = async (username, password) => {
   // json.data.token
   return json; // this leads to the return statement to be used with react //
 };
+
 // ==========   PROFILE  ==========  //
 
 //This ends up at Profile.jsx for the User's info to see/change //
@@ -37,10 +38,14 @@ export const userInfo = async (userToken) => {
       Authorization: `Bearer ${userToken}`,
     },
   };
-  const res = await fetch(URL + "/users/me", fetchArgsUser);
-  const json = await res.json();
-  console.log(json);
-  return json; // this leads to the return statement to be used with react //
+  await fetch(URL + "/users/me", fetchArgsUser)
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      return result.data;
+    })
+    .catch(console.error);
+  // this leads to the return statement to be used with react //
 };
 
 // ==========   LOGIN ========== //
@@ -97,7 +102,7 @@ export const userPost = async (
   };
   const res = await fetch(URL + "/posts", fetchArgsUser);
   const json = await res.json();
-  return json; // this leads to the return statement to be used with react //
+  return json.data; // this leads to the return statement to be used with react //
 };
 //========   LISTINGS ==============//
 export const userList = async (

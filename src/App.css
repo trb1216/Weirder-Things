@@ -3,10 +3,16 @@ body {
   color: white;
   font-family: input-sans, sans-serif;
 }
-h1,
+
 h2,
 h3 {
   font-family: Moby;
+}
+
+h1 {
+  margin-top: 80px;
+  font-family: Moby;
+  font-weight: bold;
 }
 
 a,
@@ -18,6 +24,12 @@ a:link {
 
 a:active {
   color: yellowgreen;
+}
+
+a:hover {
+  text-shadow: 0 0 7px yellowgreen, 0 0 10px rgb(172, 231, 54),
+    0 0 21px rgb(185, 247, 60);
+  color: rgb(202, 255, 95);
 }
 
 .App {
@@ -42,10 +54,23 @@ a:active {
   left: 0px;
 }
 
+@keyframes neon {
+  from {
+    color: white;
+  }
+  to {
+    color: rgb(202, 255, 95);
+  }
+}
+
 .yellowgreenNeon {
   text-shadow: 0 0 7px yellowgreen, 0 0 10px rgb(172, 231, 54),
     0 0 21px rgb(185, 247, 60);
-  color: yellowgreen;
+  color: rgb(202, 255, 95);
+  animation-name: neon;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .inputContainer {
@@ -62,18 +87,35 @@ a:active {
   font-family: moby;
   font-weight: bold;
   color: #cc0000;
-  border: white solid 2px;
+  border: #cc0000 solid 2px;
   height: 30px;
   padding: 5px;
   margin-top: 5px;
 }
 
+.inputContainer button:hover {
+  box-shadow: 0 0 10px 0 #cc0000 inset, 0 0 20px 2px #cc0000;
+  border: 3px solid #cc0000;
+  color: yellowgreen;
+}
+
 .inputContainer input {
-  background-color: hsl(0, 0%, 65%);
+  background-color: white;
   font-family: moby;
   font-weight: normal;
-  border: white solid 2px;
+  border: #cc0000 solid 2px;
   height: 40px;
+  padding: 5px;
+  margin-top: 5px;
+  color: #030706;
+}
+
+.inputContainer textarea {
+  background-color: white;
+  font-family: moby;
+  font-weight: normal;
+  border: #cc0000 solid 2px;
+  height: 100px;
   padding: 5px;
   margin-top: 5px;
   color: #030706;
@@ -82,6 +124,69 @@ a:active {
 .inputField {
   height: 100px;
   width: 200px;
+}
+
+.postContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+.postContainer button {
+  background-color: #030706;
+  font-family: moby;
+  font-weight: bold;
+  font-size: large;
+  color: #cc0000;
+  border: #cc0000 solid 2px;
+  height: 60px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.postContainer button:hover {
+  box-shadow: 0 0 10px 0 #cc0000 inset, 0 0 20px 2px #cc0000;
+  border: 3px solid #cc0000;
+  color: yellowgreen;
+}
+
+.postContainer input {
+  background-color: white;
+  font-family: moby;
+  font-weight: normal;
+  border: #cc0000 solid 2px;
+  height: 40px;
+  padding: 5px;
+  margin-top: 5px;
+  color: #030706;
+}
+
+.postContainer textarea {
+  background-color: white;
+  font-family: moby;
+  font-weight: normal;
+  border: #cc0000 solid 2px;
+  height: 100px;
+  padding: 5px;
+  margin-top: 5px;
+  color: #030706;
+}
+
+.postContainer label {
+  margin-top: 10px;
+}
+
+.postContainer select {
+  margin-top: 5px;
+  height: 40px;
+  background-color: white;
+  font-family: moby;
+  font-weight: normal;
+  border: #cc0000 solid 2px;
+  color: #030706;
 }
 
 .navbar {

@@ -35,31 +35,32 @@ const Posts = () => {
   return (
     <div>
       <h1>Post an item for sale</h1>
-      <form onSubmit={onPostClick} className="inputContainer">
+      <form onSubmit={onPostClick} className="postContainer">
+        <label>Item Name:</label>
         <input
           onChange={updateTitle}
           type="text"
           value={title}
-          placeholder="Item Name:"
+          placeholder="Name Your Item"
         ></input>
-
+        <label>Name Your Price:</label>
         <input
           onChange={updatePrice}
           type="text"
           value={price}
-          placeholder="Price: $"
+          placeholder="$$$"
         ></input>
-
+        <label>Item Description:</label>
         <textarea
           onChange={updateDescription}
           value={description}
           rows="5"
           cols="30"
           type="text"
-          placeholder="Item Description: (with condition)"
+          placeholder="Describe your item and its weird condition"
         ></textarea>
-
-        <select name="Deliver" value={willDeliver} onChange={updateWillDeliver}>
+        <label>Delivery Options (select):</label>
+        <select value={willDeliver} onChange={updateWillDeliver}>
           <option value="true">
             Yes, I will carry it to you on silver platter!
           </option>
