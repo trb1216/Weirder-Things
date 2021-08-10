@@ -189,6 +189,12 @@ a:hover {
   color: #030706;
 }
 
+.postings {
+  border: #cc0000 solid 2px;
+  font-weight: normal;
+  font-family: input-sans, sans-serif;
+}
+
 .navbar {
   position: fixed;
   right: 0;
