@@ -14,6 +14,9 @@ const Navbar = () => {
         find today?
       </h1>
       <div className="navbar">
+        <Link to="/listings">
+          <button>Listings</button>
+        </Link>
         <Link to="/home">
           <button>Home</button>
         </Link>
