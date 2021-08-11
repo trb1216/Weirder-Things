@@ -1,6 +1,6 @@
 /* This is where the entire site's API Promises live  */
 
-const URL = "https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-PT";
+const URL = "https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-PT/";
 
 //========== REGISTER  ========== //
 
@@ -129,7 +129,7 @@ export const userList = async (
     },
     body: JSON.stringify(body),
   };
-  const res = await fetch(URL + "/posts/POST_ID", fetchArgsUserPatch);
+  let res = await fetch(URL + "/posts/POST_ID", fetchArgsUserPatch);
   const json = await res.json();
   return json; // this leads to the return statement to be used with react //
 };
