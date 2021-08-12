@@ -1,6 +1,6 @@
 /* This is where the entire site's API Promises live  */
 
-const URL = "https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-PT/";
+const URL = "https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-PT";
 
 //========== REGISTER  ========== //
 
@@ -105,21 +105,21 @@ export const userPost = async (
   return json.data; // this leads to the return statement to be used with react //
 };
 //========   LISTINGS ==============//
-export const userList = async (
+export const getPosts = async (
   userToken,
-  title,
-  description,
-  price,
-  willDeliver
+  // title,
+  // description,
+  // price,
+  // willDeliver
 ) => {
-  const body = {
-    post: {
-      title,
-      description,
-      price,
-      willDeliver,
-    },
-  };
+  // const body = {
+  //   post: {
+  //     title,
+  //     description,
+  //     price,
+  //     willDeliver,
+  //   },
+  // };
 
   const fetchArgsUserPatch = {
     method: "PATCH",
@@ -127,9 +127,9 @@ export const userList = async (
       "Content-Type": "application/json",
       Authorization: `Bearer ${userToken}`,
     },
-    body: JSON.stringify(body),
+    // body: JSON.stringify(body),
   };
-  let res = await fetch(URL + "/posts/POST_ID", fetchArgsUserPatch);
+  let res = await fetch(URL + "/posts")
   const json = await res.json();
   return json; // this leads to the return statement to be used with react //
 };

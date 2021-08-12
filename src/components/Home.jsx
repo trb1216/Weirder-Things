@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { userMessages } from "../api/index";
 
-const userToken = localStorage.getItem("userToken");
 
-const Home = ({ username, posts, _id }) => {
-  const [messages, setMessages] = useState();
+
+const Home = () => {
+  const [messages, setMessages] = useState([]);
+
   useEffect(() => {
-    userMessages(userToken).then(setMessages);
+    const userToken = localStorage.getItem("userToken");
+    console.log(userToken)
+    userMessages(userToken).then((result) => {
+      console.log(result)
+      setMessages(result)
+    });
+
   }, []);
 
   return (
     <div>
-      <h1>Welcome Home {username}!</h1>
+      <h1>Welcome Home</h1>
 
       <h2>Messages</h2>
       {messages && messages.length > 0
